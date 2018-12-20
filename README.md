@@ -104,3 +104,4 @@ These limitations aren't specifically of this Converter but of Kafka JDBC Connec
 * Table creation doesn't apply any strategy to resolve CamelCase indentation, so eventId will be created on Postgres as eventid (lowercase) and not event_id, as hibernate does.
 * In another hand, table evolution will compare field names strictly, so your message field **eventId** will never match the table field **eventid** and the connector will try to create another column. It's the reason why this example's fields names are all lowercase.
 * All your fields should be primitive fields or the logical fields mapped on Kafka (as mentioned above) 
+* At this point, you can have only one schema by connector/topic.
